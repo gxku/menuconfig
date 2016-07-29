@@ -15,7 +15,7 @@ prepare :
 
 mconf : lxdialog/menubox.o lxdialog/yesno.o lxdialog/textbox.o  \
 	lxdialog/inputbox.o lxdialog/util.o lxdialog/checklist.o \
-	mconf.o zconf.tab.o
+	zconf.tab.o mconf.o
 	gcc -o $@ $^ $(LDFLAGS)
 
 conf : lxdialog/menubox.o lxdialog/yesno.o lxdialog/textbox.o  \
@@ -25,4 +25,4 @@ conf : lxdialog/menubox.o lxdialog/yesno.o lxdialog/textbox.o  \
 
 clean :
 	find -name "*.o" -exec rm "{}" \;
-
+	-rm conf mconf zconf.*.c  .*.cmd

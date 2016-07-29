@@ -1,0 +1,3 @@
+config TEST 
+	bool "test1 string"
+

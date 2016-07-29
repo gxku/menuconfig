@@ -6,9 +6,13 @@
 #
 # This is a comment to help to structure menu
 #
-CONFIG_GEN_CHOICE1=y
-# CONFIG_GEN_CHOICE2 is not set
-# CONFIG_GEN_CHOICE3 is not set
+CONFIG_LED_ON=y
+# CONFIG_LED_OFF is not set
+
+#
+# test 1
+#
+# CONFIG_TEST is not set
 
 #
 # Nested 1
@@ -21,18 +25,25 @@ CONFIG_GEN_CHOICE1=y
 #
 # we can nest as deep as we want
 #
-CONFIG_LEDON=y
 
 #
 # This item is visible only if the third option is selected
 #
 
 #
+# test 2
+#
+CONFIG_TEST2=y
+# CONFIG_ITEM1 is not set
+# CONFIG_ITEM3 is not set
+# CONFIG_ITEM4 is not set
+
+#
 # Some different config types
 #
 CONFIG_STRING_PARAM=""
-CONFIG_NUM_PARAM=
-CONFIG_NUM_PARAM2=
+CONFIG_NUM_PARAM=3
+CONFIG_NUM_PARAM2=3
 # CONFIG_TRISTATE_PARAM is not set
 
 #
