@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "include/generated/autoconf.h"
+#include "generated/autoconf.h"
 
 int main(int argc, const char *argv[])
 {

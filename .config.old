@@ -1,0 +1,44 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# Main Menu
+#
+
+#
+# This is a comment to help to structure menu
+#
+CONFIG_GEN_CHOICE1=y
+# CONFIG_GEN_CHOICE2 is not set
+# CONFIG_GEN_CHOICE3 is not set
+
+#
+# Nested 1
+#
+
+#
+# Nested 2
+#
+
+#
+# we can nest as deep as we want
+#
+CONFIG_LEDON=y
+
+#
+# This item is visible only if the third option is selected
+#
+
+#
+# Some different config types
+#
+CONFIG_STRING_PARAM=""
+CONFIG_NUM_PARAM=
+CONFIG_NUM_PARAM2=
+# CONFIG_TRISTATE_PARAM is not set
+
+#
+# Subconfmenu
+#
+
+#
+# This file can contain arbitrary nesting and dependencies and is always included
+#

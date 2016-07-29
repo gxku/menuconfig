@@ -4,15 +4,24 @@ Q            := @
 obj          := $(CURDIR)/kconfig
 SUBDIR       := kconfig
 Kconfig      := Kconfig
-rm-clean     += test
-rm-distclean += include .config
+#rm-clean     += test
+SRC_DIRS     += test
+SRC_DIRS     += test2
+rm-distclean += include/config  include/generated .config bin/*
+
+export SRC_ROOT := $(shell pwd)
+export CFLAGS += -I$(SRC_ROOT)/include/
+
+
 
 ifeq ($(quiet),silent_)
 silent := -s
 endif
 
-test:test.c
-	gcc $(CFLAGS) $< -o $@
+ALL:$(SRC_DIRS)
+	$(foreach  dir,$(SRC_DIRS),$(MAKE)  -C $(dir);)
+#test:test.c
+#	gcc $(CFLAGS) $< -o $@
 
 menuconfig : $(obj)/mconf $(obj)/conf
 	$(Q)$< $(Kconfig)
@@ -26,9 +35,9 @@ silentoldconfig: $(obj)/conf
 	$(Q)$< -s --silentoldconfig $(Kconfig)
 
 clean:
-	rm -rf $(rm-clean)
+	$(foreach  dir,$(SRC_DIRS),make -C $(dir)  clean;)
 
-distclean:
-	rm -rf $(rm-clean) $(rm-distclean)
+distclean:clean
+	rm -rf  $(rm-distclean)
 
-
+.PHONY : ALL
