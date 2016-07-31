@@ -24,17 +24,11 @@ config SHOW_MORE
 
 
 
-menu "test 1"
+menuconfig	TEST1
+	bool "chose test or not"
+if TEST1
 	source src/test/Kconfig
-	menu "Nested 1"
-		menu "Nested 2"
-			comment "we can nest as deep as we want"
-		endmenu
-	endmenu
-endmenu
-
-
-
+endif
 
 comment "This item is visible only if the third option is selected"
 
