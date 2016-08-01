@@ -1,4 +1,4 @@
 *.[oa]
-bin/  
-include/
+/bin
+/include
 .config*
