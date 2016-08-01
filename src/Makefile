@@ -1,5 +1,5 @@
 -include $(SRC_ROOT)/include/config/auto.conf
-obj-$(CONFIG_TEST)     += test
+obj-$(CONFIG_TEST1)     += test1
 obj-$(CONFIG_TEST2)	+= test2
 
 ALL:

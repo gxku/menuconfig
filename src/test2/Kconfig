@@ -1,3 +1,31 @@
-config TEST2 
-	bool "test2 string"
+config ITEM1
+	bool "Item 1 - enables additional options"
+	default n
 
+config ITEM2
+	depends on ITEM1
+	bool "Item 2 - depends on item 1"
+	default n
+
+config ITEM3
+	bool "Item 3 - is set automatically"
+	default n
+
+config ITEM4
+	bool "Item 4 - reverse dependancy"
+	select ITEM3
+	default n
+
+comment "Some different config types"
+config STRING_PARAM
+	string "String Parameter"
+	default "this is default string."
+
+config NUM_PARAM
+	int "Integer parameter between 0 an 100"
+	range 0 100
+	default 55
+
+config NUM_PARAM2
+	int "HEX parameter"
+	default 10086

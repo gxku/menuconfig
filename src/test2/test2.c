@@ -3,19 +3,11 @@
 
 int main(int argc, const char *argv[])
 {
-#ifdef CONFIG_LED_ON 
-    {
-        printf("led on!\n");
-    }
-#endif
-
-#ifdef CONFIG_LED_OFF 
-    {
-        printf("led off, led conf no");
-    }
-#endif
-#	if(CONFIG_SHOW_MORE)
-		printf("it seems led off,you can turn on it! \n");
-#endif 
-   return 0;
+	printf("STRING_PARAM is :   "CONFIG_STRING_PARAM"\n");
+	int num = CONFIG_NUM_PARAM;
+	printf("NUM_PARAM(Integer parameter between 0 an 100) is :  %d\n",num);
+	int num2 = CONFIG_NUM_PARAM2;
+	printf("NUM_PARAM2 is :  %d\n",num2);
+	return 0;
 }
+

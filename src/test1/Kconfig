@@ -1,0 +1,21 @@
+choice
+	prompt "Choice LED on/off"
+	default LED_ON
+	help
+		This is a help choice LED on/off
+		
+
+	config LED_ON
+		bool "led is on!"
+
+	config LED_OFF
+		bool "led is off!"
+		select SHOW_MORE
+		help
+			show more info.
+
+endchoice
+
+config SHOW_MORE
+	bool
+

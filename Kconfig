@@ -1,74 +1,33 @@
 mainmenu "Main Menu"
 
-comment "This is a comment to help to structure menu"
-
-choice
-	prompt "Choice LED on/off"
-	default LED_ON
-	help
-		This is a help choice LED on/off
-		
-
-	config LED_ON
-		bool "led is on!"
-
-	config LED_OFF
-		bool "led is off!"
-		select SHOW_MORE
-		help
-			show more info.
-endchoice
-
-config SHOW_MORE
-	bool
+comment "This is a comment to help to structure test1  menu"
 
 
 
 menuconfig	TEST1
-	bool "chose test or not"
+	bool "chose test1 or not"
 if TEST1
-	source src/test/Kconfig
+	source src/test1/Kconfig
 endif
+
+
+
 
 comment "This item is visible only if the third option is selected"
 
-menu "test 2"
+menuconfig TEST2
+	bool "chose test2 or not"
+if TEST2
 	source src/test2/Kconfig
 
-	config ITEM1
-		bool "Item 1 - enables additional options"
-		default n
+endif
 
-	config ITEM2
-		depends on ITEM1
-		bool "Item 2 - depends on item 1"
-		default n
 
-	config ITEM3
-		bool "Item 3 - is set automatically"
-		default n
-
-	config ITEM4
-		bool "Item 4 - reverse dependancy"
-		select ITEM3
-		default n
-endmenu
-
-comment "Some different config types"
-config STRING_PARAM
-	string "String Parameter"
-
-config NUM_PARAM
-	int "Integer parameter between 0 an 100"
-	range 0 100
-
-config NUM_PARAM2
-	int "HEX parameter"
-
-config TRISTATE_PARAM
-	tristate "Three states"
 
 menu "Subconfmenu"
+	visible if TEST2
 	source src/Kconfig
-	source src/test/Kconfig
+	menu "Nested 1"
+		comment "we can nest as deep as we want"
+	endmenu
 endmenu

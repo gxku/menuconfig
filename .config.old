@@ -4,34 +4,14 @@
 #
 
 #
-# This is a comment to help to structure menu
+# This is a comment to help to structure test1  menu
 #
+CONFIG_TEST1=y
 CONFIG_LED_ON=y
 # CONFIG_LED_OFF is not set
 
 #
-# test 1
-#
-# CONFIG_TEST is not set
-
-#
-# Nested 1
-#
-
-#
-# Nested 2
-#
-
-#
-# we can nest as deep as we want
-#
-
-#
 # This item is visible only if the third option is selected
-#
-
-#
-# test 2
 #
 CONFIG_TEST2=y
 # CONFIG_ITEM1 is not set
@@ -41,10 +21,9 @@ CONFIG_TEST2=y
 #
 # Some different config types
 #
-CONFIG_STRING_PARAM=""
-CONFIG_NUM_PARAM=3
-CONFIG_NUM_PARAM2=3
-# CONFIG_TRISTATE_PARAM is not set
+CONFIG_STRING_PARAM="this is default string."
+CONFIG_NUM_PARAM=55
+CONFIG_NUM_PARAM2=10086
 
 #
 # Subconfmenu
@@ -52,4 +31,13 @@ CONFIG_NUM_PARAM2=3
 
 #
 # This file can contain arbitrary nesting and dependencies and is always included
+#
+CONFIG_OPTIONAL_PARAM="opt"
+
+#
+# Nested 1
+#
+
+#
+# we can nest as deep as we want
 #
